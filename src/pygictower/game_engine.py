@@ -2,6 +2,7 @@
 # For details: https://github.com/gaogaotiantian/pygictower/blob/master/NOTICE
 
 from .game_global import GameGlobal
+from .game_character import Character
 
 
 class Game:
@@ -9,6 +10,7 @@ class Game:
         self._maps = []
         self._curr_map_idx = 0
         self._global_state = GameGlobal()
+        self.hero = Character()
 
     # ========================================================================
     # User Interface
@@ -43,4 +45,5 @@ class Game:
         pass
 
     def _action_move(self, direction):
-        pass
+        result = self.hero.move(self.current_map, direction)
+        return result
