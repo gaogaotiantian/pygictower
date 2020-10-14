@@ -3,4 +3,4 @@
 
 class Cell:
     def __init__(self, global_state):
-        self.walkable = True
+        self.walkable = False 
